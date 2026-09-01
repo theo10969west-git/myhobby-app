@@ -7,7 +7,7 @@ import tempfile
 import base64
 import io
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='.', static_folder='static')
 
 # 既存のサイコロ音生成関数
 def generate_dice_sound():
