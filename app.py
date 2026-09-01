@@ -84,15 +84,15 @@ def generate_card_flip_sound():
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('templates/index.html')
 
 @app.route('/dice')
 def dice():
-    return render_template('dice.html')
+    return render_template('templates/dice.html')
 
 @app.route('/cards')
 def cards():
-    return render_template('cards.html')
+    return render_template('templates/cards.html')
 
 @app.route('/api/roll_dice', methods=['POST'])
 def roll_dice():
