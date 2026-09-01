@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>カードゲーム</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="game-screen">
+            <div class="game-header">
+                <a href="/" class="back-btn">← 戻る</a>
+                <h1>🎴 カードゲーム</h1>
+                <div class="spacer"></div>
+            </div>
+            
+            <div class="game-content">
+                <!-- カード表示エリア -->
+                <div class="card-display-area">
+                    <div id="cardContainer" class="card-container">
+                        <div class="card back">
+                            <div class="card-pattern">🎴</div>
+                        </div>
+                    </div>
+                    <p class="card-instruction">カードをクリックしてめくる</p>
+                </div>
+                
+                <!-- カード情報 -->
+                <div class="card-info-panel">
+                    <div class="info-item">
+                        <span class="label">現在のカード:</span>
+                        <span id="cardText" class="value">-</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">累計枚数:</span>
+                        <span id="countText" class="value">0/53</span>
+                    </div>
+                </div>
+                
+                <!-- 履歴 -->
+                <div class="history-panel">
+                    <h3>📋 めくったカード</h3>
+                    <div id="cardHistoryList" class="history-list history-grid">
+                        <p class="empty-message">まだカードをめくっていません</p>
+                    </div>
+                </div>
+                
+                <!-- アクションボタン -->
+                <div class="action-buttons">
+                    <button id="resetCardBtn" class="reset-btn secondary-btn">リセット</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="{{ url_for('static', filename='cards.js') }}"></script>
+</body>
+</html>

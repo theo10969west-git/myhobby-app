@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>飲み会ゲーム</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="menu-screen">
+            <h1 class="title">🎲 飲み会ゲーム 🎲</h1>
+            <p class="subtitle">お酒は飲んでも吞まれるな！</p>
+            
+            <div class="games-grid">
+                <a href="/dice" class="game-card dice-card">
+                    <div class="game-icon">🎲</div>
+                    <h2>サイコロゲーム</h2>
+                    <p>複数のサイコロを振って結果を競う</p>
+                    <button class="play-btn">プレイ</button>
+                </a>
+                
+                <a href="/cards" class="game-card cards-card">
+                    <div class="game-icon">🎴</div>
+                    <h2>カードゲーム</h2>
+                    <p>ランダムなカードをめくる</p>
+                    <button class="play-btn">プレイ</button>
+                </a>
+            </div>
+            
+            <div class="footer">
+                <p>© 2026 飲み会ゲーム Collection</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

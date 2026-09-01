@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>サイコロゲーム</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="game-screen">
+            <div class="game-header">
+                <a href="/" class="back-btn">← 戻る</a>
+                <h1>🎲 サイコロゲーム</h1>
+                <div class="spacer"></div>
+            </div>
+            
+            <div class="game-content">
+                <!-- サイコロ制御 -->
+                <div class="control-panel">
+                    <div class="control-group">
+                        <button id="decreaseBtn" class="control-btn minus-btn">−</button>
+                        <div class="dice-count-display">
+                            <span class="count-label">サイコロ</span>
+                            <span id="diceCount" class="count-value">1</span>
+                            <span class="count-label">個</span>
+                        </div>
+                        <button id="increaseBtn" class="control-btn plus-btn">+</button>
+                    </div>
+                </div>
+                
+                <!-- サイコロ表示エリア -->
+                <div class="dice-display-area">
+                    <div id="diceContainer" class="dice-container">
+                        <div class="dice" data-value="1">1</div>
+                    </div>
+                </div>
+                
+                <!-- ロール結果 -->
+                <div class="result-panel">
+                    <div class="result-item">
+                        <span class="label">出た目:</span>
+                        <span id="resultText" class="value">-</span>
+                    </div>
+                    <div class="result-item highlight">
+                        <span class="label">合計:</span>
+                        <span id="totalText" class="value">-</span>
+                    </div>
+                </div>
+                
+                <!-- 履歴 -->
+                <div class="history-panel">
+                    <h3>📋 履歴</h3>
+                    <div id="historyList" class="history-list">
+                        <p class="empty-message">まだ履歴がありません</p>
+                    </div>
+                </div>
+                
+                <!-- アクションボタン -->
+                <div class="action-buttons">
+                    <button id="rollBtn" class="roll-btn primary-btn">サイコロを振る</button>
+                    <button id="resetBtn" class="reset-btn secondary-btn">リセット</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="{{ url_for('static', filename='dice.js') }}"></script>
+</body>
+</html>
